@@ -1,0 +1,14 @@
+{
+    "name": "OdevProjem",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "dependencies": {
+        "ejs": "^2.6.1",
+        "express": "^4.16.4",
+        "express-ejs-layouts": "^2.5.0",
+        "mysql": "^2.17.1",
+        "nodemon": "^1.18.11"
+    }
+}

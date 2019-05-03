@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>listMusicType</title>
+    <script>
+      function deleteMusicType(id){
+        var question=confirm("emin misiniz");
+        if(question==true){
+          window.location='deleteMusicType/'+id;
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <table>
+          <tr><a href="/" >Anasayfa</a></tr>
+          <br>
+           <tr>
+            <a href="listArtist">Sanatçıları Listele</a>
+            <br>
+            <a href="addArtist">Sanatçı Ekle</a>
+          </tr>
+          <tr>
+              <br>
+            <a href="listAlbum">Albümleri Listele</a>
+            <br>
+            <a href="addAlbum">Albüm Ekle</a>  
+          </tr> 
+          <br>
+          <tr>
+            <a href="listMusicType">Müzik Türleri Listele</a>
+            <br>
+            <a href="addMusicType">Müzik Türü Ekle</a>
+          </tr>
+        </table> 
+    <div class="container">
+            <li><a href="addMusicType">add Music Type</a></li>
+      <table align="center">
+        <tr>
+            <th>Müzik Tür No</th>
+            <th>Müzik Tür Adı</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+        <% musictype.forEach(function(data){ 
+          var artistStatus;
+        %>
+        <tr>
+          <td><%=data.MusicTypeId%></td>
+          <td><%=data.MusicType%></td>
+          <td><a href="updateMusicType/<%=data.MusicTypeId%>" class="button is-warning">Güncelle</a></td>
+          <td><a onclick="deleteMusicType('<%=data.MusicTypeId%>')" class="button is-danger">Sil</a></td>
+        </tr>  
+        <% }) %>
+      </table>
+    </div>
+  </body>
+</html>

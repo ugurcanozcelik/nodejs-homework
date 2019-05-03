@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <base href="/">
+    <title>updateAlbum</title>
+  </head>
+  <body>
+      <table>
+          <tr><a href="/" >Anasayfa</a></tr>
+          <br>
+           <tr>
+            <a href="listArtist">Sanatçıları Listele</a>
+            <br>
+            <a href="addArtist">Sanatçı Ekle</a>
+          </tr>
+          <tr>
+              <br>
+            <a href="listAlbum">Albümleri Listele</a>
+            <br>
+            <a href="addAlbum">Albüm Ekle</a>  
+          </tr> 
+          <br>
+          <tr>
+            <a href="listMusicType">Müzik Türleri Listele</a>
+            <br>
+            <a href="addMusicType">Müzik Türü Ekle</a>
+          </tr>
+        </table> 
+    <div class="container">
+            <li><a href="listAlbum">Albümler</a></li>
+        <form method="post" action="updateAlbum/<%=album[0].AlbumId%>">
+          <table align="center">
+            <tr>
+              <td>Albüm Adı:</td>
+              <td><input value="<%=album[0].AlbumName%>" required type="text" name="albumName" class="input"></td>
+            </tr>
+            <tr>
+              <td>Sanatçı Adı:</td>
+              <td>
+                <select required class="input" name="artistName">
+                  <option></option>
+                  <% artist.forEach(function(data){ %>
+                  <option <% if(data.ArtistId==album[0].ArtistId){%>selected<%}%> value="<%=data.ArtistId%>"><%=data.ArtistName%></option>
+                  <% }); %>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Müzik Türü:</td>
+              <td>
+                <select required class="input" name="musicType">
+                  <option></option>
+                  <%
+                   musictype.forEach(function(data){ %>
+                  <option <% if(data.MusicTypeId==album[0].MusicTypeId){%>selected<%}%>  value="<%=data.MusicTypeId%>"><%=data.MusicType%></option>
+                  <% }); %>
+
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Albüm Çıkış Tarihi:</td>
+              <td><input value="<%=album[0].LaunchDate%>" required type="date" class="input" name="LaunchDate"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="submit" value="updateAlbum" class="button is-warning"></td>
+            </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

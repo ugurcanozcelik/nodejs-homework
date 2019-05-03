@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>listArtist</title>
+    <script>
+      function deleteArtist(id){
+        var question=confirm("Silmek İstediğinize Emin Misiniz ?");
+        if(question==true){
+          window.location='deleteArtist/'+id;
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <table>
+          <tr><a href="/" >Anasayfa</a></tr>
+          <br>
+           <tr>
+            <a href="listArtist">Sanatçıları Listele</a>
+            <br>
+            <a href="addArtist">Sanatçı Ekle</a>
+          </tr>
+          <tr>
+              <br>
+            <a href="listAlbum">Albümleri Listele</a>
+            <br>
+            <a href="addAlbum">Albüm Ekle</a>  
+          </tr> 
+          <br>
+          <tr>
+            <a href="listMusicType">Müzik Türleri Listele</a>
+            <br>
+            <a href="addMusicType">Müzik Türü Ekle</a>
+          </tr>
+        </table> 
+    <div class="container">
+            <li><a href="addArtist">Sanatçı Ekle</a></li>
+      <table align="center">
+        <tr>
+            <th>Sanatçı No</th>
+            <th>Sanatçı Adı</th>
+            <th>Sanatçı Yaşıyor mu</th>
+            <th>Sanatçı Doğum Tarihi</th>
+            <th>Sanatçı Eklenme Tarihi</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+        <% artist.forEach(function(data){ 
+          var artistStatus;
+          if(data.DoTheArtistLive==0){artistStatus='Hayır';}
+          else{artistStatus='Evet';}
+        %>
+        <tr>
+          <td><%=data.ArtistId%></td>
+          <td><%=data.ArtistName%></td>
+          <td><%=artistStatus%></td>
+          <td><%= data.ArtistBirthDate%></td>
+          <td><%=data.AdditionDate%></td>
+          <td><a href="updateArtist/<%=data.ArtistId%>" class="button is-warning">update</a></td>
+          <td><a onclick="deleteArtist('<%=data.ArtistId%>')" class="button is-danger">delete</a></td>
+        </tr>  
+        <% }) %>
+      </table>
+    </div>
+  </body>
+</html>

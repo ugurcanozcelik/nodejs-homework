@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>listAlbum</title>
+    <script>
+      function deleteAlbum (id){
+        var question=confirm("Silmek İstediğinize Emin Misiniz ?");
+        if(question==true){
+          window.location='deleteAlbum/'+id;
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <table>
+          <tr><a href="/" >Anasayfa</a></tr>
+          <br>
+           <tr>
+            <a href="listArtist">Sanatçıları Listele</a>
+            <br>
+            <a href="addArtist">Sanatçı Ekle</a>
+          </tr>
+          <tr>
+              <br>
+            <a href="listAlbum">Albümleri Listele</a>
+            <br>
+            <a href="addAlbum">Albüm Ekle</a>  
+          </tr> 
+          <br>
+          <tr>
+            <a href="listMusicType">Müzik Türleri Listele</a>
+            <br>
+            <a href="addMusicType">Müzik Türü Ekle</a>
+          </tr>
+        </table> 
+    <div class="container">
+            <ul>
+            <li><a href="addAlbum">Albüm Ekle</a></li>
+            </ul>      
+      <table align="center">
+        <tr>
+            <th>Albüm No</th>
+            <th>Albüm Adı</th>
+            <th>Albüm Çıkış Tarihi</th>
+            <th>Sanatçı Adı</th>
+            <th>Müzik Türü</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+        <% 
+          album.forEach(function(data){ 
+        %>
+        <tr>
+          <td><%=data.AlbumId%></td>
+          <td><%=data.AlbumName%></td>
+          <td><%= data.LaunchDate %></td>
+          <td><%=data.ArtistName%></td>
+          <td><%=data.MusicType%></td>
+          <td><a href="updateAlbum/<%=data.AlbumId%>" class="button">Update</a></td>
+          <td><a onclick="deleteAlbum('<%=data.AlbumId%>')" class="button">Delete</a></td>
+        </tr>  
+        <% }) %>
+      </table>
+    </div>
+  </body>
+</html>

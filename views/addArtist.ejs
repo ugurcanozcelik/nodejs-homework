@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addArtist</title>
+</head>
+<body>
+    <table>
+        <tr><a href="/" >Anasayfa</a></tr>
+        <br>
+         <tr>
+          <a href="listArtist">Sanatçıları Listele</a>
+          <br>
+          <a href="addArtist">Sanatçı Ekle</a>
+        </tr>
+        <tr>
+            <br>
+          <a href="listAlbum">Albümleri Listele</a>
+          <br>
+          <a href="addAlbum">Albüm Ekle</a>  
+        </tr> 
+        <br>
+        <tr>
+          <a href="listMusicType">Müzik Türleri Listele</a>
+          <br>
+          <a href="addMusicType">Müzik Türü Ekle</a>
+        </tr>
+      </table> 
+    <div class="container">
+        <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+              <ul>
+              <li><a href="listArtist">Sanatçılar</a></li>
+              <li class="is-active"><a href="#" aria-current="page">Sanatçı Ekle</a></li>
+            </ul>
+          </nav>
+          <form method="post" action="addArtist">
+            <table align="center" class="table is-striped">
+              <tr>
+                <td>Sanatçı Adı:</td>
+                <td><input required type="text" name="artistName" class="input"></td>
+              </tr>
+              <tr>
+                <td>Sanatçı Yaşıyor mu:</td>
+                <td><input required type="radio" name="doTheArtistLive" value="1"> Evet <input required type="radio" name="doTheArtistLive" value="0"> Hayır</td>
+              </tr>
+              <tr>
+                <td>Sanatçı Doğum Tarihi:</td>
+                <td><input required type="date" class="input" name="artistBirthDate"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><input type="submit" value="addArtist"></td>
+              </tr>
+          </table>
+        </form>
+      </div>
+</body>
+</html>

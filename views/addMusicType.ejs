@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Müzik Türü Ekle</title>
+    
+  </head>
+  <body>
+      <table>
+          <tr><a href="/" >Anasayfa</a></tr>
+          <br>
+           <tr>
+            <a href="listArtist">Sanatçıları Listele</a>
+            <br>
+            <a href="addArtist">Sanatçı Ekle</a>
+          </tr>
+          <tr>
+              <br>
+            <a href="listAlbum">Albümleri Listele</a>
+            <br>
+            <a href="addAlbum">Albüm Ekle</a>  
+          </tr> 
+          <br>
+          <tr>
+            <a href="listMusicType">Müzik Türleri Listele</a>
+            <br>
+            <a href="addMusicType">Müzik Türü Ekle</a>
+          </tr>
+        </table> 
+    <div class="container">
+      <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+            <ul>
+            <li><a href="listMusicType" aria-current="page">Müzik Türleri</a></li>
+          </ul>
+        </nav>
+        <form method="post" action="addMusicType">
+          <table align="center">
+            <tr>
+              <td style="font-weight:bold">Müzik Türü:</td>
+              <td><input required type="text" name="musicType" class="input"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="submit" value="Müzik Türü Ekle"></td>
+            </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
