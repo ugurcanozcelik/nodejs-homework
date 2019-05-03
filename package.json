@@ -2,7 +2,7 @@
     "name": "OdevProjem",
     "version": "1.0.0",
     "scripts": {
-        "start": "nodemon server.js"
+        "start": "*"
     },
     "dependencies": {
         "ejs": "^2.6.1",
