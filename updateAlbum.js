@@ -21,7 +21,7 @@ module.exports.updateAlbumPost = function(req,res){
     var albumId=req.params.id;
     var albumName=req.body.albumName;
     var artistName=req.body.artistName;
-    var LaunchAlbum=req.body.LaunchAlbumtarihi;
+    var LaunchAlbum=req.body.LaunchDate;
     var musicType=req.body.musicType;
     var sql = "UPDATE album SET AlbumName='"+albumName+"',ArtistId='"+artistName+"',LaunchDate='"+LaunchAlbum+"',MusicTypeId='"+musicType+"' where AlbumId='"+albumId+"'";
     connection.query(sql, function (err, result) {
